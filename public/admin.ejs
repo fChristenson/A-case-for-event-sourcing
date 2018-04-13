@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Admin</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+  <h1>Admin</h1>
+  <a href="/order">Create order</a>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Confirmed</th>
+        <th>Confirm order</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% orders.forEach(function(order) { %>
+        <tr>
+          <td>
+            <%= order.orderId %>
+          </td>
+          <td>
+            <%= order.firstName %>
+          </td>
+          <td>
+            <%= order.lastName %>
+          </td>
+          <td>
+            <%= order.email %>
+          </td>
+          <td>
+            <%= order.isConfirmed + "" %>
+          </td>
+          <td>
+            <a href="/confirm?id=<%= order.orderId %>">Confirm</a>
+          </td>
+        </tr>
+        <% }); %>
+    </tbody>
+  </table>
+  <h2>History</h2>
+  <ul>
+    <% events.forEach(function(event) { %>
+      <li>
+        <%= event.type %> -
+          <%= JSON.stringify({data: event.data, orderId: event.orderId}, null, 4) %>
+      </li>
+      <% }); %>
+  </ul>
+</body>
+
+</html>

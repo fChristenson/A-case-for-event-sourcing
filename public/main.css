@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: steelblue;
+  color: white;
+  padding: 8px;
+}
+
+a {
+  color: gold;
+}
+
+table {
+  border-collapse: collapse;
+  padding-top: 16px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+td {
+  min-width: 216px;
+  border-bottom: 1px solid white;
+}
+
+h2 {
+  padding: 8px 0;
+}
+
+li {
+  padding: 18px 0;
+}
